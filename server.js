@@ -10,9 +10,9 @@ const server = http.createServer(app);
 
 // ====== Configuration ======
 const ALLOWED_ORIGINS = [
-  'http://localhost:3000', // customer
-  'http://localhost:3001', // restaurant
-  'http://localhost:3002'  // delivery
+  'https://tomato-lime-seven.vercel.app/', // customer
+  'https://tomato-restaurant-rho.vercel.app/', // restaurant
+  'https://tomato-delivery-one.vercel.app/'  // delivery
 ];
 const PORT = process.env.PORT ? Number(process.env.PORT) : 4000;
 
@@ -67,7 +67,7 @@ function sanitizeOrderPayload(payload) {
 // ====== REST API routes (plain + /api compatibility) ======
 
 // Health
-app.get('/api/health', (req, res) => res.json({ status: 'ok', message: 'FoodHub server running' }));
+app.get('/api/health', (req, res) => res.json({ status: 'ok', message: 'Tomato server running' }));
 
 // --- Restaurants ---
 // get all restaurants
@@ -380,3 +380,4 @@ process.on('SIGTERM', () => {
 });
 
 module.exports = { app, server, io };
+
